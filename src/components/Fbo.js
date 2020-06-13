@@ -84,8 +84,13 @@ class FBO {
       new THREE.BufferAttribute(vertices, 3)
     );
 
-    this.particles = new THREE.Points(this.particleGeometry, renderMaterial);
+    console.log("fbo: ", this, renderer);
     this.renderer = renderer;
+    this.particles = new THREE.Points(this.particleGeometry, renderMaterial);
+  }
+
+  getTexture() {
+    return this.renderTarget.texture;
   }
 
   update() {

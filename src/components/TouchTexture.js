@@ -28,6 +28,7 @@ class TouchTexture {
 
     this.canvas.id = "touchTexture";
     this.canvas.style.width = this.canvas.style.height = `${this.canvas.width}px`;
+    document.querySelector("body").appendChild(this.canvas);
   }
 
   update(delta) {
@@ -49,6 +50,7 @@ class TouchTexture {
   }
 
   addTouch(point) {
+    console.log(point);
     let force = 0;
     const last = this.trail[this.trail.length - 1];
     if (last) {
